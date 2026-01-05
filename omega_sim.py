@@ -1,5 +1,6 @@
 import re
 import itertools
+import sys
 
 class OmegaNetwork:
     def __init__(self, size=8):
@@ -222,13 +223,18 @@ def print_schedule(schedule, sim):
 def main():
     sim = OmegaNetwork(size=8)
     
-    permutations = [
-        ("(7 0 6 5 2) (4 3) (1)", "pi1"),
-        ("(1 7) (0 3) (4 2) (5 6)", "pi2"),
-        ("(6 5 1 2) (0 3 4 7)", "pi3"),
-        ("(2 5 3 7 0 4) (1 6)", "pi4"),
-        ("(1 2 4 7 6 0 5 3)", "pi5")
-    ]
+    if len(sys.argv) > 1:
+        permutations = []
+        for i, arg in enumerate(sys.argv[1:]):
+            permutations.append((arg, f"Custom Arg {i+1}"))
+    else:
+        permutations = [
+            ("(7 0 6 5 2) (4 3) (1)", "pi1"),
+            ("(1 7) (0 3) (4 2) (5 6)", "pi2"),
+            ("(6 5 1 2) (0 3 4 7)", "pi3"),
+            ("(2 5 3 7 0 4) (1 6)", "pi4"),
+            ("(1 2 4 7 6 0 5 3)", "pi5")
+        ]
     
     for p_str, name in permutations:
         print(f"--- Analysis for {name} ---")
