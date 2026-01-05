@@ -1,6 +1,6 @@
 # Omega Network Simulator
 
-这个 Python 脚本模拟了一个 8x8 Omega 网络，用于分析给定的置换（Permutations）是否会发生阻塞，并计算完成该置换所需的最小传输周期（Cycles）。
+本实验模拟了一个 8x8 Omega 网络，用于分析给定的置换是否会发生阻塞，并计算完成该置换所需的最小传输周期（Cycles）。
 
 ## 功能
 
@@ -38,7 +38,7 @@ python omega_sim.py "(1 2) (3 4)" "(0 7 6)"
 
 ## 输出结果 (Output)
 
-程序运行后会在终端直接打印实验结果，包括：
+程序运行后会在终端直接输出实验结果，包括：
 
 -   **Status**: `NON-BLOCKING` (无阻塞) 或 `BLOCKING` (阻塞)。
 -   **Minimum Cycles**: 完成置换所需的最少时间周期。
